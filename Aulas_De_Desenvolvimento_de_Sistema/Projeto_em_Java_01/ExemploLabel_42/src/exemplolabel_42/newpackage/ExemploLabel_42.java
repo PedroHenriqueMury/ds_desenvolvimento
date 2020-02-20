@@ -1,17 +1,21 @@
 package exemplolabel_42.newpackage;
-
+import java.awt.event.*;
 import javax.swing.*;//Esta importando a biblioteca javax onde está puxando o swing e com ".*" puxamos tudo que precisamos.
 import java.awt.*;//Esta importanto a biblioteca java onde dela puxamos o "awt" e com ".*" puxamos tudo que precisamo.
 public class ExemploLabel_42 extends JFrame{//Estamos deixando a classe pública para outras classes e está herdando de JFrame.
     JLabel rotulo1, rotulo2, rotulo3, rotulo4, rotulo5, rotulo6, rotulo7, rotulo8, rotulo9;//Setamos rótulos para podermos usar.
     JTextField texto1, texto2, texto3, texto4, texto5, texto6, texto7, texto8;//Setamos caixas para podermos usar na janela.
-    JButton botao;
+    JButton botao, botao1, botao2;
+    ImageIcon icone;
 public ExemploLabel_42(){//Estamos deixando o projeto público e vísivel.
     super("Exemplo de Label");//Legenda que ficara no cabeçalho da janela.
     Container tela = getContentPane();//Estamos setando um perímetro para que possamos editar.
     setLayout(null);//Setando um parâmetro.
         
-        botao = new JButton("Cadastrar");
+        icone = new ImageIcon("up.png");
+    
+        botao = new JButton("Procurar");
+        botao1 = new JButton("Abrir", icone);
     
         rotulo1 = new JLabel ("Nome:");//Setando uma palavrar para representar o rotulo.
         rotulo2 = new JLabel ("CPF:");
@@ -31,7 +35,8 @@ public ExemploLabel_42(){//Estamos deixando o projeto público e vísivel.
         texto7 = new JTextField();
         
         
-        botao.setBounds(150, 330, 100, 20);
+        botao.setBounds(20, 330, 100, 20);
+        botao1.setBounds(150, 330, 100, 20);
         
         rotulo1.setBounds(50, 20, 80, 20);//Setando o X, Y e a altura e largura de cada palavra.  
         rotulo2.setBounds(50, 60, 80, 20);
@@ -70,6 +75,7 @@ public ExemploLabel_42(){//Estamos deixando o projeto público e vísivel.
         rotulo8.setFont(new Font("Arial", Font.BOLD, 12));
         
         tela.add(botao);
+        tela.add(botao1);
         
         tela.add(rotulo1);//Adiciona o rotulo a tela de exibição.
         tela.add(rotulo2);
