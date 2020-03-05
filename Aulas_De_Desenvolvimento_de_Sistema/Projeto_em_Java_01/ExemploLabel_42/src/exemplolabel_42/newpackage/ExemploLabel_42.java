@@ -1,11 +1,13 @@
 package exemplolabel_42.newpackage;
+import javax.swing.text.*;
+import java.text.*;
 import java.awt.event.*;
 import javax.swing.*;//Esta importando a biblioteca javax onde está puxando o swing e com ".*" puxamos tudo que precisamos.
 import java.awt.*;//Esta importanto a biblioteca java onde dela puxamos o "awt" e com ".*" puxamos tudo que precisamo.
 public class ExemploLabel_42 extends JFrame{//Estamos deixando a classe pública para outras classes e está herdando de JFrame.
     JLabel rotulo1, rotulo2, rotulo3, rotulo4, rotulo5, rotulo6, rotulo7, rotulo8, rotulo9, rotulos, rotulod, rotulotel;//Setamos rótulos para podermos usar.
     JTextField texto1, texto3, texto4, texto5, texto6, texto8;//Setamos caixas para podermos usar na janela.
-    JFormattedTextField texto2, texto7, textotel, textod;
+    JFormattedTextField cpf, cep, textotel, textod;
     JButton botao, botao1, botao2;
     ImageIcon icone;
     JPasswordField caixa;
@@ -41,6 +43,7 @@ public ExemploLabel_42(){//Estamos deixando o projeto público e vísivel.
         texto6 = new JTextField();
         
         
+        
         caixa.setBounds(50, 320, 80, 20);
         
         botao.setBounds(20, 440, 100, 20);
@@ -59,23 +62,33 @@ public ExemploLabel_42(){//Estamos deixando o projeto público e vísivel.
         rotulod.setBounds(50, 380, 100, 20);
         
         texto1.setBounds(50, 40, 150, 20);
-        texto2.setBounds(50, 80, 150, 20);
+       
         texto3.setBounds(50, 120, 150, 20);
         texto4.setBounds(50, 160, 150, 20);
         texto5.setBounds(50, 200, 150, 20);
         texto6.setBounds(50, 240, 150, 20);
-        texto7.setBounds(50, 280, 150, 20);
+        
         
     try{
-        
+        masccep = new MaskFormatter("#####-###");
+        masctel = new MaskFormatter("(##)####-####");
+        masccpf = new MaskFormatter("#########-##");
+        mascdata = new MaskFormatter("##/##/####");
+        masccep.setPlaceholderCharacter('_');
+        masctel.setPlaceholderCharacter('_');
+        masccpf.setPlaceholderCharacter('_');
+        mascdata.setPlaceholderCharacter('_');
     }    
+    catch(ParseException excp){}
+    
+    cep = new JFormattedTextField(masccep);
+    textotel = new JFormattedTextField(masctel);
+    cpf = new JFormattedTextField(masccpf); 
+    textod = new JFormattedTextField(mascdata);    
         
-        
-        
-        
-        
-        
-        
+     cpf.setBounds(50, 80, 150, 20);    
+     cep.setBounds(50, 280, 150, 20);
+     textod.setBounds(50, 400,150,20);
         
         
         
@@ -113,14 +126,16 @@ public ExemploLabel_42(){//Estamos deixando o projeto público e vísivel.
         tela.add(rotulo7);
         tela.add(rotulo8);
         tela.add(rotulos);
+        tela.add(rotulod);
         
         tela.add(texto1);
-        tela.add(texto2);
+        tela.add(cpf);
         tela.add(texto3);
         tela.add(texto4);
         tela.add(texto5);
         tela.add(texto6);
-        tela.add(texto7);
+        tela.add(cep);
+        tela.add(textod);
         
         
         

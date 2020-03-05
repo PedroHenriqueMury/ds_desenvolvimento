@@ -13,11 +13,12 @@ public calculadora(){
         rotulo2 = new JLabel("2º Número: ");
         texto1 = new JTextField(5);
         texto2 = new JTextField(5);
-        ;
         soma = new JButton("Soma");
         subi = new JButton("Subtração");
         divi = new JButton("Divisão");
         multii = new JButton("Multiplicação");
+        exibir = new JLabel("");
+        
         
         
    rotulo1.setBounds(50, 20, 100, 20);
@@ -26,9 +27,9 @@ public calculadora(){
    texto2.setBounds(120, 60, 200, 20);
    exibir.setBounds(50, 120, 200, 20);
    soma.setBounds(50, 100, 80, 20);
-   subi.setBounds(70, 100, 80, 20);
-   multii.setBounds(90, 100, 80, 20);
-   divi.setBounds(110, 100, 80, 20);
+   subi.setBounds(150, 100, 100, 20);
+   multii.setBounds(270, 100, 110, 20);
+   divi.setBounds(390, 100, 80, 20);
    
    soma.addActionListener(
            new ActionListener(){
@@ -99,7 +100,7 @@ public calculadora(){
    tela.add(divi);
    tela.add(multii);
    
-   setSize(450, 300);
+   setSize(500, 450);
    setVisible(true);
    
 }
